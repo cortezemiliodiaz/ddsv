@@ -47,7 +47,9 @@ namespace gta_ddsv1
                         GTA.UI.Screen.ShowSubtitle("I marked your target on your map, after you ~r~kill~w~ them i will give you your ~g~money~w~.");
                         if (hasmarkedonmap == false)
                         {
-                            Target = World.CreatePed(PedHash.Billionaire, Main.clientpositions[rnd.Next(Main.clientpositions.Length)]);
+                            int pos = rnd.Next(Main.clientpositions.Length);
+                            Target = World.CreatePed(PedHash.Billionaire, Main.clientpositions[pos]);
+                            Target.Heading = Main.clientyaw[pos];
                             hasmarkedonmap = true;
                             blip = World.CreateBlip(Target.Position);
                             blip.Color = BlipColor.Red;

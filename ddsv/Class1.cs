@@ -53,7 +53,7 @@ namespace gta_ddsv1
 
         public static Vector3[] clientpositions = { new Vector3(5.3613f, -1674.728f, 29.3069f), new Vector3(-133.7501f, -996.5969f, 27.2585f), new Vector3(39.3495f, -1020.944f, 29.4762f), new Vector3(94.7569f, -972.0383f, 29.3525f), new Vector3(203.6087f, -960.0268f, 30.0753f), new Vector3(790.3320f, -837.6572f, 25.9709f),
         new Vector3(337.3239f, -633.0912f, 29.2758f) };
-        float[] clientyaw = { 39.2243f, 39.2244f, 78.5907f, -108.1053f, 100.6956f, 121.9895f, -74.1382f };
+        public static float[] clientyaw = { 39.2243f, 39.2244f, 78.5907f, -108.1053f, 100.6956f, 121.9895f, -74.1382f };
         Vector3[] deaddroppositions = { new Vector3(378.2689f, -682.9201f, 28.2885f), new Vector3(333.8959f, -678.5932f, 28.3221f), new Vector3(499.4009f, -725.4374f, 23.8775f), new Vector3(372.4997f, -869.2589f, 28.2932f), new Vector3(133.5368f, -994.0809f, 28.3606f), new Vector3(287.1237f, -1063.982f, 28.4216f) };
 
         ObjectPool menupool;
