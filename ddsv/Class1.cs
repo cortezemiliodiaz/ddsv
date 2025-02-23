@@ -10,6 +10,7 @@ using LemonUI.Menus;
 using System.Threading;
 using iFruitAddon2;
 using System.IO;
+using ddsv.chemist;
 
 namespace gta_ddsv1
 {
@@ -74,7 +75,7 @@ namespace gta_ddsv1
             editpricesinbackground.Start();
             menupool = new ObjectPool();
             config = ScriptSettings.Load("scripts\\ddconfig.ini");
-            Notification.Show($"Welcome to Cortez's Drug Dealing mod. Click {Keys.Z} to open Drug Dealing Menu.");
+            Notification.PostTicker($"Welcome to Cortez's Drug Dealing mod. Click {Keys.Z} to open Drug Dealing Menu.", true);
             Blip dd = World.CreateBlip(ddposition);
             dd.Sprite = BlipSprite.Weed;
             dd.Name = "Supplier";
@@ -217,17 +218,17 @@ namespace gta_ddsv1
 
         void showrep(object sender, EventArgs e)
         {
-            Notification.Show($"Reputation: {reputation}");
+            Notification.PostTicker($"Reputation: {reputation}", true);
         }
 
         void showinv(object sender, EventArgs e)
         {
-            Notification.Show($"Inventory: ~g~ weed: {weed}~w~   cocaine: {cocaine}   ~y~heroin: {heroin}~w~");
+            Notification.PostTicker($"Inventory: ~g~ weed: {weed}~w~   cocaine: {cocaine}   ~y~heroin: {heroin}~w~", true);
         }
 
-        void shedulewithchemist(object sender, EventArgs e)
+        static void shedulewithchemist(object sender, EventArgs e)
         {
-            Notification.Show("~g~test");
+            chemistmain.scheduleappointment();
         }
 
         void Setup()
@@ -248,6 +249,7 @@ namespace gta_ddsv1
 
             schedulechemist = new NativeItem("Schedule appointment with chemist", "Lets you schedule a appointment with your chemist");
             schedulechemist.Activated += shedulewithchemist;
+            menu.Add(schedulechemist);
 
             reputationmi = new NativeItem("Reputation", "Views your reputation");
             reputationmi.Activated += showrep;

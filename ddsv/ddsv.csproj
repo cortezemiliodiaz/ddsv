@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="beahitman.cs" />
+    <Compile Include="chemist\chemistmain.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="editprices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
